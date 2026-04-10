@@ -75,3 +75,4 @@ solution.
 ```bash
 pip install streamlit numpy scipy plotly
 streamlit run app.py
+```
