@@ -5,6 +5,7 @@ ReactorIQ models CSTR, PFR, Batch, and Packed Bed reactors, solving the
 governing equations numerically to generate concentration profiles, conversion 
 curves, temperature gradients, and reactor sizing analysis.
 
+<img width="1725" height="912" alt="Screenshot 2026-04-09 at 7 51 27 PM" src="https://github.com/user-attachments/assets/d5c3420e-c4c0-4aff-91f8-72ce7cb1dc94" />
 
 ---
 
@@ -56,8 +57,6 @@ solution.
 ---
 
 ## Screenshots
-
-<img width="1725" height="912" alt="Screenshot 2026-04-09 at 7 51 27 PM" src="https://github.com/user-attachments/assets/d5c3420e-c4c0-4aff-91f8-72ce7cb1dc94" />
 
 <img width="1707" height="827" alt="Screenshot 2026-04-09 at 7 53 01 PM" src="https://github.com/user-attachments/assets/d9d13e3e-630d-4df6-a4e6-0b4164a09a7f" />
 
