@@ -5,6 +5,14 @@ from scipy.optimize import fsolve
 import plotly.graph_objects as go
 import plotly.express as px
 from plotly.subplots import make_subplots
+import requests
+
+def simulate_via_api(params):
+    response = requests.post(
+        "http://localhost:8000/simulate/cstr",
+        json=params
+    )
+    return response.json()
 
 # ─────────────────────────────────────────────
 #  PAGE CONFIG & CUSTOM STYLING
