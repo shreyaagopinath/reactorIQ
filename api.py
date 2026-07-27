@@ -57,3 +57,31 @@ def simulate_cstr(params: CSTRInput):
 @app.get("/simulate/history")
 def get_history():
     return {"message": "History endpoint — connect to PostgreSQL in v2"}
+
+class PFRInput(BaseModel):
+    concentration_in: float = 1.0
+    flow_rate: float = 1.0
+    volume: float = 100.0
+    rate_constant: float = 0.1
+
+@app.post("/simulate/pfr", response_model=SimulationResult)
+def simulate_pfr(params: PFRInput):
+    # Residence time
+    tau = params.volume / params.flow_rate
+    
+    # PFR: Ca = Ca0 * exp(-k*tau)
+    concentration_out = params.concentration_in * np.exp(
+        -params.rate_constant * tau
+    )
+    
+    conversion = (
+        (params.concentration_in - concentration_out)
+        / params.concentration_in
+    )
+    
+    return SimulationResult(
+        conversion=round(conversion, 4),
+        concentration_out=round(concentration_out, 4),
+        residence_time=round(tau, 2),
+        reactor_type="PFR"
+    )
